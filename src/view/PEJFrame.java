@@ -58,6 +58,7 @@ public class PEJFrame extends javax.swing.JFrame {
 
     private void loadTable() {
         DefaultTableModel dtm = (DefaultTableModel) tblPE.getModel();
+        _lstQLPE = _qlPEService.selectAll();
         dtm.setRowCount(0);
         for (QLPE qlpe : _lstQLPE) {
             dtm.addRow(qlpe.toDataRow());
